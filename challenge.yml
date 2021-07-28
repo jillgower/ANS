@@ -1,0 +1,16 @@
+---
+- name: create playbook that iterates thru hosts and puts file on it
+  hosts: planetexpress
+  gather_facts: no   # runs the "setup" module on remote hosts
+
+  # these variables are used to build templates
+  vars_files:
+    - vars/challenge.yml
+
+
+  tasks:
+    - name: Configure file 
+      template:
+        src: templates/challeng.cfg.j2    # name of the template on ansible controller
+        dest: ~/challenge.cfg              # name of the completed file to be placed on the target system
+

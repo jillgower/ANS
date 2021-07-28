@@ -1,6 +1,11 @@
 ---
-users2:
-  - walter
-  - jonessr
-  - laoche
+host:
+  - bender
+    ip: 10.10.2.3
+  - fry
+    ip: 10.10.2.4
+  - zoidberg
+    ip: 10.10.2.5
+  - farnsworth
+    ip: 10.10.2.6
 
