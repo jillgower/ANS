@@ -1,0 +1,7 @@
+---
+- name: Thursday Checkup challenge
+  hosts: planetexpress
+  gather_facts: yes
+
+  roles:
+    - thursday_checkup

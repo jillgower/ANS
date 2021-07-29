@@ -1,0 +1,20 @@
+- name: Playbook - Install packages    # metadata
+  package:
+    name:
+    - sl       
+    - cowsay        
+    state: latest     # parameter state has the value present
+  become: True              # elevate status to admin, sudo, enable, etc.
+
+- name: Make sures bastet is up to date
+  package:
+    name: bastet
+    state: latest
+  become: True
+  when: ansible_distribution == "Ubuntu"  
+
+- name: "insert line into file ~loggy.log"
+  lineinfile:
+    path: ~/loggy.log
+    line: "{{ ansible_date_time.date }} - Passed Checkup"
+    create: true
